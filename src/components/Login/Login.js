@@ -56,12 +56,13 @@ const Login = () => {
                 const signedInUser = { name: displayName, email }
                 setLoggedInUser(signedInUser)
                 history.replace(from)
-                console.log('fb user after sign in', user)
+                console.log('fb user after sign in', signedInUser)
                 var accessToken = credential.accessToken;
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
+                console.log(errorMessage)
                 var email = error.email;
                 var credential = error.credential;
             });
